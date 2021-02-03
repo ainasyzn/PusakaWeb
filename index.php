@@ -1,5 +1,5 @@
 <?php
-  include ("conn.php");
+  include ("database/main/main.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -124,15 +124,15 @@
         </div> 
       </div>           
     </header>
-    <!-- Header Section End --> 
-
+    <!-- Header Section End -->         
     <!-- Services Section Start -->
     <section id="services" class="section">
       <div class="container">
         <div class="section-header">          
           <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Pengenalan</h2>
           <hr class="lines wow zoomIn" data-wow-delay="0.3s">
-          <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Pusaka Pelangi Sdn Bhd ditubuhkan pada bulan Julai 1993. Syarikat ini ditubuhkan untuk menyediakan perkhidmatan yang secukupnya kepada klien kami dalam bidang gas dan minyak dengan cekap, mapan dan lestari. A team of professional service personals are the asset of the company. They are trained and retrained whenever need arises, the company is committed to train its people in order to carry out work professionally.</p>
+          <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s"><?php echo $row["pengenalan_desc"]?></p>
+          
     </section>
     <!-- Services Section End -->
 
@@ -143,7 +143,7 @@
           <div class="col-lg-8">
               <div class="video-promo-content text-center">
                 <h2 class="wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms">Watch Our Intro video</h2>
-                <p class="wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms">Aliquam vestibulum cursus felis. In iaculis iaculis sapien ac condimentum. Vestibulum congue posuere lacus, id tincidunt nisi porta sit amet. Suspendisse et sapien varius, pellentesque dui non, semper orci.</p>
+                <p class="wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms"><?php echo $row["pengenalan_vid_desc"]?></p>
                 <a href="https://www.youtube.com/watch?v=IXoMDwh4Cq8" class="video-popup wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0.3s"><i class="lnr lnr-film-play"></i></a>
               </div>
           </div>
@@ -285,7 +285,7 @@
         <div class="section-header">          
           <h2 class="section-title">Projek Kami</h2>
           <hr class="lines">
-          <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos! <br> Lorem ipsum dolor sit amet, consectetur.</p>
+          <p class="section-subtitle"><?php echo $row["team_desc"]?></p>
         </div>
         <div class="row">          
           <div class="col-md-12">
@@ -369,7 +369,9 @@
                 </div>               
               </div>
             </div>
+            
           </div>
+
         </div>
       </div>
       <!-- Container Ends -->
@@ -392,8 +394,8 @@
                 <i class="lnr lnr-clock"></i>
               </div>             
               <div class="fact-count">
-                <h3><span class="counter">1589</span></h3>
-                <h4>Working Hours</h4>
+                <h3><span class="counter"><?php echo $row["jam_bekerja"]?></span></h3>
+                <h4>Jam Bekerja</h4>
               </div>
             </div>
           </div>
@@ -403,8 +405,8 @@
                 <i class="lnr lnr-briefcase"></i>
               </div>            
               <div class="fact-count">
-                <h3><span class="counter">699</span></h3>
-                <h4>Completed Projects</h4>
+                <h3><span class="counter"><?php echo $row["bilanganprojek"]?></span></h3>
+                <h4>Bilangan Project</h4>
               </div>
             </div>
           </div>
@@ -414,8 +416,8 @@
                 <i class="lnr lnr-user"></i>
               </div>              
               <div class="fact-count">
-                <h3><span class="counter">203</span></h3>
-                <h4>No. of Clients</h4>
+                <h3><span class="counter"><?php echo $row["bilanganklien"]?></span></h3>
+                <h4>Bilangan Klien</h4>
               </div>
             </div>
           </div>
@@ -425,8 +427,8 @@
                 <i class="lnr lnr-heart"></i>
               </div>              
               <div class="fact-count">
-                <h3><span class="counter">1689</span></h3>
-                <h4>Peoples Love</h4>
+                <h3><span class="counter"><?php echo $row["bilangansuka"]?></span></h3>
+                <h4>Kepuasan Klien</h4>
               </div>
             </div>
           </div>
@@ -444,13 +446,18 @@
           <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos! <br> Lorem ipsum dolor sit amet, consectetur.</p>
         </div>
         <div class="row">
+        <?php
+        if($result1 != null){
+                  if($result1-> num_rows>0) {
+                  while ($row1 = $result1-> fetch_assoc()) {
+            ?>
           <div class="col-lg-3 col-md-6 col-xs-12">
             <div class="single-team">
               <img src="img/team/team1.jpg" alt="">
               <div class="team-details">
                 <div class="team-inner">
-                  <h4 class="team-title">Jhon Doe</h4>
-                  <p>Chief Technical Officer</p>
+                  <h4 class="team-title"><?php echo $row1["memberName"]?></h4>
+                  <p><?php echo $row1["posisi"]?></p>
                   <ul class="social-list">
                     <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
                     <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -461,57 +468,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <div class="single-team">
-              <img src="img/team/team2.jpg" alt="">
-              <div class="team-details">
-                <div class="team-inner">
-                  <h4 class="team-title">Paul Kowalsy</h4>
-                  <p>CEO & Co-Founder</p>
-                  <ul class="social-list">
-                    <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <div class="single-team">
-              <img src="img/team/team3.jpg" alt="">
-              <div class="team-details">
-                <div class="team-inner">                  
-                  <h4 class="team-title">Emilly Williams</h4>
-                  <p>Business Manager</p>
-                  <ul class="social-list">
-                    <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <div class="single-team">
-              <img class="img-fulid" src="img/team/team4.jpg" alt="">
-              <div class="team-details">
-                <div class="team-inner">
-                  <h4 class="team-title">Patricia Green</h4>
-                  <p>Graphic Designer</p>
-                  <ul class="social-list">
-                    <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+          <?php }}}?>
         </div>
       </div>
     </section>
@@ -523,39 +480,20 @@
         <div class="row justify-content-md-center">
           <div class="col-md-12">
               <h1 style="text-align:center">Partner Kami</h1>
-            <div class="touch-slider owl-carousel owl-theme">
-              <div class="testimonial-item">
-                <img src="img/testimonial/customer1.jpg" alt="Client Testimonoal" />
-                <div class="testimonial-text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. send do <br> adipisicing ciusmod tempor incididunt ut labore et</p>
-                  <h3>Jone Deam</h3>
-                  <span>Fondor of Jalmori</span>
+            <div class="touch-slider owl-carousel owl-theme"><?php
+              if($result2 != null){
+                    if($result2-> num_rows>0) {
+                    while ($row2 = $result2-> fetch_assoc()) {
+              ?>
+                <div class="testimonial-item">
+                  <img src="img/testimonial/customer1.jpg" alt="Client Testimonoal" />
+                  <div class="testimonial-text">
+                    <p><?php echo $row2["partnerDesc"]?></p>
+                    <h3><?php echo $row2["partnerName"]?></h3>
+                    <span><?php echo $row2["posisi"]?></span>
+                  </div>
                 </div>
-              </div>
-              <div class="testimonial-item">
-                <img src="img/testimonial/customer2.jpg" alt="Client Testimonoal" />
-                <div class="testimonial-text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. send do <br> adipisicing ciusmod tempor incididunt ut labore et</p>
-                  <h3>Oidila Matik</h3>
-                  <span>President Lexo Inc</span>
-                </div>
-              </div>
-              <div class="testimonial-item">
-                <img src="img/testimonial/customer3.jpg" alt="Client Testimonoal" />
-                <div class="testimonial-text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. send do <br> adipisicing ciusmod tempor incididunt ut labore et</p>
-                  <h3>Alex Dattilo</h3>
-                  <span>CEO Optima Inc</span>
-                </div>
-              </div>
-              <div class="testimonial-item">
-                <img src="img/testimonial/customer4.jpg" alt="Client Testimonoal" />
-                <div class="testimonial-text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. send do <br> adipisicing ciusmod tempor incididunt ut labore et</p>
-                  <h3>Paul Kowalsy</h3>
-                  <span>CEO & Founder</span>
-                </div>
-              </div>
+              <?php }}} ?>
             </div>
           </div>
         </div>        

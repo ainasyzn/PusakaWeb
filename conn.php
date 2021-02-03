@@ -2,7 +2,9 @@
     // connect to database
     $conn = mysqli_connect('localhost','root','','pelangi');
     
-    if(!$conn){
-        echo 'Connection error' . mysqli_connect_error();
-    } 
+    // Check connection
+    if ($conn -> error) {
+    echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+    exit();
+  }
 ?>

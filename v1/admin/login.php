@@ -14,7 +14,7 @@
         <p class="sign" align="center">Admin Login</p>
         <form class="form1" action="../php/login.php"  method="POST">
 
-          <input class="un" name="username" type="text" align="center" placeholder="Email" required>
+          <input class="un" name="email" type="text" align="center" placeholder="Email" required>
 
           <input class="pass" name="password"  type="password" align="center" placeholder="Password" required><br>
 

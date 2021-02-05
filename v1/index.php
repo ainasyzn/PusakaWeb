@@ -164,107 +164,22 @@
           <div class="col-lg-8 col-md-12 col-xs-12">
             <div class="container">
               <div class="row">
+              <?php
+        if($result3 != null){
+                  if($result3-> num_rows>0) {
+                  while ($row3 = $result3-> fetch_assoc()) {
+            ?>
                  <div class="col-lg-6 col-sm-6 col-xs-12 box-item">
                     <span class="icon">
                       <i class="lnr lnr-rocket"></i>
                     </span>
                     <div class="text">
-                      <h4>Supplies</h4>
-
-                        <p>Installation c/w piping at farm area and install LPG/NG equipment</p>
-                        <p>Storage tank and its facilities (LPG/Natural Gas)</p>
-
+                      <h4><?php echo $row3["khidmatName"]?></h4>
+                      <?php echo nl2br($row3["khidmatDescription"])?>
                     </div>
                   </div>
-                  <div class="col-lg-6 col-sm-6 col-xs-12 box-item">
-                    <span class="icon">
-                      <i class="lnr lnr-laptop-phone"></i>
-                    </span>
-                    <div class="text">
-                      <h4>LPG Saddle and Natural Gas Station</h4>
-                      <ul>
-                        <li>Installation work
-                          <ul>
-                            <li><small>LPG Tank</small>
-                              <ul>
-                                <li><div class="dropdown">
-                                      <small>></small>
-                                      <div class="dropdown-content">
-                                       <p>2nos x 2.5KL</p>
-                                       <p>2nos x 10KL</p>
-                                       <p>2nos x 21KL</p>
-                                    </div>
-                                    </div></li>
-                              <ul>
-                            </li>
-                            <li><small>LPG Vapor Manifold System</small>
-                              <ul>
-                                <li><div class="dropdown">
-                                      <small>></small>
-                                      <div class="dropdown-content">
-                                       <p>4nos x 2banks x 50kg</p>
-                                       <p>6nos x 2banks x 50kg</p>
-                                       <p>11nos x 2banks x 50kg</p>
-                                       <p>23nos x 2banks x 50kg</p>
-                                    </div>
-                                    </div></li>
-                              <ul>
-                              </li>
-                            <li><small>LPG Liquid Withdrawal System</small>
-                              <ul>
-                                <li><div class="dropdown">
-                                      <small>></small>
-                                      <div class="dropdown-content">
-                                       <p>4nos x 2banks x 50kg</p>
-                                       <p>6nos x 2banks x 50kg</p>
-                                       <p>11nos x 2banks x 50kg</p>
-                                       <p>23nos x 2banks x 50kg</p>
-                                    </div>
-                                    </div></li>
-                              <ul>
-
-                            </li>
-                          </ul>
-                        </li>
-                        <li><br>Requalification, Decommissioning & Demolization of LPG Bulk Tank
-                              <ul>
-                                <li><div class="dropdown">
-                                      <small>></small>
-                                      <div class="dropdown-content">
-                                       <p>1nos x 200Kg</p>
-                                       <p>1nos x 2.5KL</p>
-                                       <p>1nos x 10KL</p>
-                                       <p>1nos x 21KL</p>
-                                    </div>
-                                    </div></li>
-                              <ul>
-
-                        </li>
-                        <li><br>Vaporizer Maintenance</li>
-                      </ul>
-
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-sm-6 col-xs-12 box-item">
-                    <span class="icon">
-                      <i class="lnr lnr-layers"></i>
-                    </span>
-                    <div class="text">
-                      <h4>Cosmestic Repainting</h4>
-                      <p>14Kg Cylinder</p>
-
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-sm-6 col-xs-12 box-item">
-                    <span class="icon">
-                      <i class="lnr lnr-cog"></i>
-                    </span>
-                    <div class="text">
-                      <h4>Future Business</h4>
-                      <p>RC/RQ Cylinder C14 and C50</p>
-                      <p>Bottling Plant</p>
-                    </div>
-                  </div>
+            <?php }}} ?>
+                  <!-- end loop -->
               </div>
             </div>
           </div>

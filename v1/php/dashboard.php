@@ -1,15 +1,11 @@
 <?php
-   include('session.php');
+   session_start();
+   $email = $_SESSION['email'];
+
+   //get all admin info
+   $sql = "SELECT * 
+           FROM `admin`
+           WHERE email = '$email'";
+   $result = $conn->query($sql);
+   $admin = $result-> fetch_assoc();
 ?>
-<html">
-   
-   <head>
-      <title>Welcome </title>
-   </head>
-   
-   <body>
-      <h1>Welcome <?php echo $login_session; ?></h1> 
-      <h2><a href = "logout.php">Sign Out</a></h2>
-   </body>
-   
-</html>

@@ -13,5 +13,8 @@
     //get all partner desc
     $sql2 = "SELECT * FROM `partner`";
     $result2 = $conn->query($sql2);
-    
+
+    //get all perkhidmatan
+    $sql3 = "SELECT * FROM  `perkhidmatan`";
+    $result3 = $conn->query($sql3);
 ?>

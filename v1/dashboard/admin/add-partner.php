@@ -1,7 +1,6 @@
 <?php
  include ("../../conn.php");
  include ("../../php/dashboard.php");
- include ("../../php/getpartner.php");
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -112,12 +111,8 @@
                                     src="../assets/images/users/1.jpg" alt="user" class="rounded-circle"
                                     width="31"></a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated">
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i>
-                                    My Profile</a>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i>
-                                    My Balance</a>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i>
-                                    Inbox</a>
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-power-off m-r-5 m-l-5"></i>
+                                   Logout</a>
                             </div>
                         </li>
                         <!-- ============================================================== -->
@@ -148,24 +143,9 @@
                                 <div class="user-content hide-menu m-l-10">
                                     <a href="javascript:void(0)" class="" id="Userdd" role="button"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <h5 class="m-b-0 user-name font-medium"><?php echo $admin['adName']?><i
-                                                class="fa fa-angle-down"></i></h5>
+                                        <h5 class="m-b-0 user-name font-medium"><?php echo $admin['adName']?></h5>
                                         <span class="op-5 user-email"><?php echo $admin['email']?></span>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="Userdd">
-                                        <a class="dropdown-item" href="javascript:void(0)"><i
-                                                class="ti-user m-r-5 m-l-5"></i> My Profile</a>
-                                        <a class="dropdown-item" href="javascript:void(0)"><i
-                                                class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
-                                        <a class="dropdown-item" href="javascript:void(0)"><i
-                                                class="ti-email m-r-5 m-l-5"></i> Inbox</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="javascript:void(0)"><i
-                                                class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="javascript:void(0)"><i
-                                                class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
-                                    </div>
                                 </div>
                             </div>
                             <!-- End User Profile-->
@@ -220,12 +200,6 @@
                             </nav>
                         </div>
                     </div>
-                    <div class="col-7">
-                        <div class="text-right upgrade-btn">
-                            <a href="add-partner.php" class="btn btn-primary text-white"
-                               style="background-color: #4fc3f7; border: none;"><i class="fa fa-plus-square"></i> Add new Partner</a>
-                        </div>
-                    </div>
                 </div>
             </div>
             <!-- ============================================================== -->
@@ -239,44 +213,37 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <div class="row">
-                    <div class="col-12">
+                    <!-- Column -->
+                    <div class="col-lg-8 col-xlg-9 col-md-7">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Senarai Rakan Kongsi Perniagaan</h4>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Logo Syarikat</th>
-                                            <th scope="col">Nama Syarikat</th>
-                                            <th scope="col">Tindakan</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php
-                                    if($result-> num_rows>0) {
-                                    $i = 1;
-                                    while ($row = $result-> fetch_assoc()) {?>
-                                        <tr>
-                                            <th scope="row"><?php echo $i ?></th>
-                                            <td><img style="max-height: 20%; max-width: 20%;" src="../../uploads/<?php echo $row["partnerImej"]?>"></td>
-                                            <td><?php echo $row["partnerName"] ?></td>
-                                            <td style="text-align: center;">
-                                            <a href="../../php/deletepartner.php?ID=<?php echo  $row["id"] ?>"><i onclick="return confirm('Hapus rakan kongsi ini?')" aria-hidden="true" class="fas fa-trash-alt"></i></a>&nbsp&nbsp&nbsp                               
-                                            <a href="partner.php?ID=<?php echo  $row["id"] ?>"><i class="fas fa-edit"></i></td></a>
-                                        </tr>
-                                    <?php $i++;
-                                        }                                    
-                                    } ?>
-                                    </tbody>
-                                </table>
+                                <form class="form-horizontal form-material" method="POST" action="../../php/addpartner.php" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label class="col-md-12">Nama Syarikat Rakan Kongsi</label>
+                                        <div class="col-md-12">
+                                            <input type="text" placeholder="Masukkan nama syarikat" name="name"
+                                                class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Logo Syarikat Rakan Kongsi</label>
+                                        <div class="col-md-12">
+                                        Select image to upload:
+                                            <input  type="file" name="file" id="file" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <input type="submit" class="btn btn-success" name="tambah" value="Tambah">
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
-
-                </div> <!-- row end -->
+                    <!-- Column -->
+                </div>
             </div>   
             <!-- ============================================================== -->
             <!-- End Container fluid  -->

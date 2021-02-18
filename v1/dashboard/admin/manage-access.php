@@ -1,6 +1,7 @@
 <?php
  include ("../../conn.php");
  include ("../../php/dashboard.php");
+ include ("../../php/getadmin.php");
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -15,7 +16,7 @@
     <meta name="description"
         content="Xtreme Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Xtreme Admin Lite Template by WrapPixel</title>
+    <title>Admin | Pusaka Pelangi</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/xtreme-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
@@ -201,7 +202,7 @@
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-5">
-                        <h4 class="page-title">Profile Page</h4>
+                        <h4 class="page-title">Manage Admin</h4>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
@@ -213,8 +214,8 @@
                     </div>
                     <div class="col-7">
                         <div class="text-right upgrade-btn">
-                            <a href="https://wrappixel.com/templates/xtremeadmin/" class="btn btn-primary text-white"
-                                target="_blank" style="background-color: #4fc3f7; border: none;"><i class="fa fa-plus-square"></i> Add new Admin</a>
+                            <a href="add-admin.php" class="btn btn-primary text-white"
+                             style="background-color: #4fc3f7; border: none;"><i class="fa fa-plus-square"></i> Add new Admin</a>
                         </div>
                     </div>
                 </div>
@@ -231,43 +232,43 @@
                 <!-- ============================================================== -->
                 <!-- Row -->
                 <div class="row">
-                    <!-- Column -->
-                    <div class="col-lg-8 col-xlg-9 col-md-7">
+                    <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <form class="form-horizontal form-material" method="POST" action="../../../php/updateprofile.php">
-                                    <div class="form-group">
-                                        <label class="col-md-12">Nama penuh</label>
-                                        <div class="col-md-12">
-                                            <input type="text" placeholder="Masukkan nama penuh" name="nama" value="<?php echo $admin['adName'];?>"
-                                                class="form-control form-control-line">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="example-email" class="col-md-12">Email</label>
-                                        <div class="col-md-12">
-                                            <input type="email" placeholder="contoh@pusakapelangi.com" name="email" value="<?php echo $admin['email'];?>"
-                                                class="form-control form-control-line">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-12">Kata laluan</label>
-                                        <div class="col-md-12">
-                                            <input type="password"
-                                                class="form-control form-control-line"  name="katalaluan" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-sm-12">
-                                            <input type="submit" class="btn btn-success" name="kemaskini" value="Kemaskini">
-                                        </div>
-                                    </div>
-                                </form>
+                                <h4 class="card-title">Senarai Admin</h4>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Nama admin</th>
+                                            <th scope="col">E-mel</th>
+                                            <th scope="col">Tindakan</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php
+                                    if($result-> num_rows>0) {
+                                    $i = 1;
+                                    while ($row = $result-> fetch_assoc()) {?>
+                                        <tr>
+                                            <th scope="row"><?php echo $i ?></th>
+                                            <td><?php echo $row["adName"]?></td>
+                                            <td><?php echo $row["email"] ?></td>
+                                            <td style="text-align: center;">
+                                            <a href="../../php/deleteadmin.php?ID=<?php echo  $row["id"] ?>"><i onclick="return confirm('Hapus admin ini?')" aria-hidden="true" class="fas fa-trash-alt"></i></a>&nbsp&nbsp&nbsp                               
+                                        </tr>
+                                    <?php $i++;
+                                        }                                    
+                                    } ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
-                    <!-- Column -->
-                </div>
+
+                </div> <!-- row end -->
                 <!-- Row -->
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->

@@ -181,14 +181,14 @@
                                 href="manage-company.php" aria-expanded="false"><i class="mdi mdi-border-all"></i><span
                                     class="hide-menu">Manage Company Info</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="#" aria-expanded="false"><i class="mdi mdi-face"></i><span
+                                href="manage-project.php" aria-expanded="false"><i class="mdi mdi-face"></i><span
                                     class="hide-menu">Manage Project</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="manage-partner.php" aria-expanded="false"><i class="mdi mdi-file"></i><span
                                     class="hide-menu">Manage Partner</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="error-404.php" aria-expanded="false"><i class="mdi mdi-alert-outline"></i><span
-                                    class="hide-menu">Manage Team</span></a></li>
+                                href="perkhidmatan.php" aria-expanded="false"><i class="mdi mdi-alert-outline"></i><span
+                                    class="hide-menu">Perkhidmatan</span></a></li>
 
                     </ul>
 
@@ -216,10 +216,14 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Library</li>
-
                                 </ol>
-                                <a href="list-project.php" class="btn btn-success">list project</a>
                             </nav>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <div class="text-right upgrade-btn">
+                            <a href="list-project.php" class="btn btn-primary text-white"
+                               style="background-color: #4fc3f7; border: none;">Senarai Projek</a>
                         </div>
                     </div>
                 </div>

@@ -154,7 +154,7 @@
                                 href="index.php" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="#" aria-expanded="false"><i
+                                href="manage-access.php" aria-expanded="false"><i
                                     class="mdi mdi-account-network"></i><span class="hide-menu">Manage Access</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="manage-company.php" aria-expanded="false"><i class="mdi mdi-border-all"></i><span
@@ -163,11 +163,11 @@
                                 href="manage-project.php" aria-expanded="false"><i class="mdi mdi-face"></i><span
                                     class="hide-menu">Manage Project</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="starter-kit.php" aria-expanded="false"><i class="mdi mdi-file"></i><span
+                                href="manage-partner.php" aria-expanded="false"><i class="mdi mdi-file"></i><span
                                     class="hide-menu">Manage Partner</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="error-404.php" aria-expanded="false"><i class="mdi mdi-alert-outline"></i><span
-                                    class="hide-menu">Manage Team</span></a></li>
+                                href="perkhidmatana.php" aria-expanded="false"><i class="mdi mdi-alert-outline"></i><span
+                                    class="hide-menu">Perkhidmatan</span></a></li>
                     </ul>
 
                 </nav>

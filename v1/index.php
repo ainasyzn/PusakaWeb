@@ -228,27 +228,28 @@ h3{
           <hr class="lines">
           <p class="section-subtitle"><?php echo $row["team_desc"]?></p>
         </div>
-        <div class="row">          
-          
-
+        <div id="portfolio" class="row">          
           <!-- Portfolio Recent Projects -->
           <?php
-            if($results-> num_rows>0) {
+          if($results != null){
+            if($results -> num_rows>0) {
             while ($projek = $results-> fetch_assoc()) {
               ?>
-          <div id="portfolio" class="row">
-            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print">
+            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 " style="display:inline-block;" data-bound>
+            
               <div class="portfolio-item">
                 <div class="shot-item">
+                
                   <img src="uploads/<?php echo $projek["imej"]?>" alt=""/>  
                   <a class="overlay lightbox" href="uploads/<?php echo $projek["imej"]?>">
                     <i class="lnr lnr-eye item-icon"></i>
                   </a>
+                  <p><?php echo $projek["projekName"]?></p>
                 </div>               
               </div>
             </div>
-          </div>
-          <?php } } ?>
+          
+          <?php } } } ?>
 
         </div>
       </div>
@@ -318,35 +319,14 @@ h3{
     <!-- Team section Start -->
     <section id="team" class="section">
       <div class="container">
+      <div class="row justify-content-md-center">
         <div class="section-header">          
-          <h2 class="section-title">Team Kami</h2>
+          <h2 class="section-title">Carta Organisasi</h2>
           <hr class="lines">
-          <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos! <br> Lorem ipsum dolor sit amet, consectetur.</p>
         </div>
-        <div class="row">
-        <?php
-        if($result1 != null){
-                  if($result1-> num_rows>0) {
-                  while ($row1 = $result1-> fetch_assoc()) {
-            ?>
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <div class="single-team">
-              <img src="img/team/team1.jpg" alt="">
-              <div class="team-details">
-                <div class="team-inner">
-                  <h4 class="team-title"><?php echo $row1["memberName"]?></h4>
-                  <p><?php echo $row1["posisi"]?></p>
-                  <ul class="social-list">
-                    <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <?php }}}?>
+        <div class="row" >
+        <img src="uploads/<?php echo $row["imej_org"]?>" >
+        </div>
         </div>
       </div>
     </section>
@@ -366,15 +346,16 @@ h3{
               ?>
               
               <center>
-                <div class="carousel-inner">
-                  <div class="item-active">
-                  <img src="uploads/<?php echo $row2["partnerImej"]?>" style="width:50%; height:165px; border:none;"/>
-                  </div>
-                </div>
-                <div class="testimonial-text" style="display: inline;">
+              <div class="testimonial-text" style="display: inline;">
                   <p><?php echo $row2["partnerName"]?>
                 
                 </div>
+                <div class="carousel-inner">
+                  <div class="item-active" >
+                  <img src="uploads/<?php echo $row2["partnerImej"]?>" style="width:50%; height:50%;"/>
+                  </div>
+                </div>
+                
                 
                 </center>
               <?php }}} ?>

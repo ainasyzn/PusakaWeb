@@ -1,6 +1,7 @@
 <?php
  include ("../../conn.php");
  include ("../../php/dashboard.php");
+ include ("../../php/getkhidmat.php");
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -17,10 +18,17 @@
     <meta name="robots" content="noindex,nofollow">
     <title>Admin | Pusaka Pelangi</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/xtreme-admin-lite/" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
     <!-- Custom CSS -->
     <link href="../dist/css/style.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 </head>
 
 <body>
@@ -162,12 +170,13 @@
                             </div>
                             <!-- End User Profile-->
                         </li>
+
                         <!-- User Profile-->
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="index.php" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="#" aria-expanded="false"><i
+                                href="manage-access.php" aria-expanded="false"><i
                                     class="mdi mdi-account-network"></i><span class="hide-menu">Manage Access</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="manage-company.php" aria-expanded="false"><i class="mdi mdi-border-all"></i><span
@@ -179,8 +188,8 @@
                                 href="manage-partner.php" aria-expanded="false"><i class="mdi mdi-file"></i><span
                                     class="hide-menu">Manage Partner</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="error-404.php" aria-expanded="false"><i class="mdi mdi-alert-outline"></i><span
-                                    class="hide-menu">Manage Team</span></a></li>
+                                href="perkhidmatan.php" aria-expanded="false"><i class="mdi mdi-alert-outline"></i><span
+                                    class="hide-menu">Perkhidmatan</span></a></li>
                     </ul>
 
                 </nav>
@@ -201,7 +210,7 @@
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-5">
-                        <h4 class="page-title">Profile Page</h4>
+                        <h4 class="page-title">Senarai Perkhidmatan</h4>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
@@ -213,8 +222,8 @@
                     </div>
                     <div class="col-7">
                         <div class="text-right upgrade-btn">
-                            <a href="https://wrappixel.com/templates/xtremeadmin/" class="btn btn-primary text-white"
-                                target="_blank" style="background-color: #4fc3f7; border: none;"><i class="fa fa-plus-square"></i> Add new Admin</a>
+                            <a href="add-khidmat.php" class="btn btn-primary text-white"
+                               style="background-color: #4fc3f7; border: none;"><i class="fa fa-plus-square"></i>Tambah Perkhidmatan</a>
                         </div>
                     </div>
                 </div>
@@ -229,57 +238,45 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <!-- Row -->
                 <div class="row">
-                    <!-- Column -->
-                    <div class="col-lg-8 col-xlg-9 col-md-7">
+                    <div class="col-12">
                         <div class="card">
-                            <div class="card-body">
-                                <form class="form-horizontal form-material" method="POST" action="../../../php/updateprofile.php">
-                                    <div class="form-group">
-                                        <label class="col-md-12">Nama penuh</label>
-                                        <div class="col-md-12">
-                                            <input type="text" placeholder="Masukkan nama penuh" name="nama" value="<?php echo $admin['adName'];?>"
-                                                class="form-control form-control-line">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="example-email" class="col-md-12">Email</label>
-                                        <div class="col-md-12">
-                                            <input type="email" placeholder="contoh@pusakapelangi.com" name="email" value="<?php echo $admin['email'];?>"
-                                                class="form-control form-control-line">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-12">Kata laluan</label>
-                                        <div class="col-md-12">
-                                            <input type="password"
-                                                class="form-control form-control-line"  name="katalaluan" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-sm-12">
-                                            <input type="submit" class="btn btn-success" name="kemaskini" value="Kemaskini">
-                                        </div>
-                                    </div>
-                                </form>
+
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Nama Perkhidmatan</th>
+                                            <th scope="col">Penerangan Perkhidmatan</th>
+                                            <th scope="col">Tindakan</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php
+                                    if($result-> num_rows>0) {
+                                    $i = 1;
+                                    while ($row = $result-> fetch_assoc()) {?>
+                                        <tr>
+                                            <th scope="row"><?php echo $i ?></th>
+                                            <td><?php echo $row["khidmatName"]?></td>
+                                            <td><?php echo nl2br($row["khidmatDescription"]) ?></td>
+                                            <td style="text-align: center;">
+                                            <a href="../../php/deletekhidmat.php?ID=<?php echo  $row["id"] ?>"><i onclick="return confirm('Hapus gambar projek ini?')" aria-hidden="true" class="fas fa-trash-alt"></i></a>&nbsp&nbsp&nbsp 
+                                                                        
+                                            <a href="khidmat.php?ID=<?php echo  $row["id"] ?>"><i class="fas fa-edit"></i></td><a>                              
+                                        </tr>
+                                    <?php $i++;
+                                        }                                    
+                                    } ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
-                    <!-- Column -->
-                </div>
-                <!-- Row -->
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-                <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-                <!-- ============================================================== -->
-                <!-- End Right sidebar -->
-                <!-- ============================================================== -->
-            </div>
+
+                </div> <!-- row end -->
+            </div>   
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
             <!-- ============================================================== -->

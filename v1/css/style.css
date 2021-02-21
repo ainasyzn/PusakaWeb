@@ -116,13 +116,13 @@ form.form1 {
 }
 
 .submit {
-    position:relative;
+    position:fixed;
     cursor: pointer;
     border-radius: 5em;
     color: #fff;
     background: linear-gradient(to right, #9C27B0, #E040FB);
     border: 0;
-    right:70px;
+    left:170px;
     padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 10px;

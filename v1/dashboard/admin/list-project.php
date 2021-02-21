@@ -176,7 +176,7 @@
                                 href="index.php" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="pages-profile.php" aria-expanded="false"><i
+                                href="manage-access.php" aria-expanded="false"><i
                                     class="mdi mdi-account-network"></i><span class="hide-menu">Manage Access</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="manage-company.php" aria-expanded="false"><i class="mdi mdi-border-all"></i><span
@@ -188,8 +188,8 @@
                                 href="manag-partner.php" aria-expanded="false"><i class="mdi mdi-file"></i><span
                                     class="hide-menu">Manage Partner</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="error-404.php" aria-expanded="false"><i class="mdi mdi-alert-outline"></i><span
-                                    class="hide-menu">Manage Team</span></a></li>
+                                href="perkhidmatan.php" aria-expanded="false"><i class="mdi mdi-alert-outline"></i><span
+                                    class="hide-menu">Perkhidmatan</span></a></li>
                     </ul>
 
                 </nav>
@@ -210,7 +210,7 @@
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-5">
-                        <h4 class="page-title">Rakan Kongsi Perniagaan</h4>
+                        <h4 class="page-title">Senarai Projek</h4>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
@@ -223,7 +223,7 @@
                     <div class="col-7">
                         <div class="text-right upgrade-btn">
                             <a href="add-project.php" class="btn btn-primary text-white"
-                               style="background-color: #4fc3f7; border: none;"><i class="fa fa-plus-square"></i>Add new Project</a>
+                               style="background-color: #4fc3f7; border: none;"><i class="fa fa-plus-square"></i>Tambah Projek</a>
                         </div>
                     </div>
                 </div>
@@ -241,9 +241,6 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Senarai Projek</h4>
-                            </div>
                             <div class="table-responsive">
                                 <table class="table table-hover">
                                     <thead>

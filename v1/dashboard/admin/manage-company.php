@@ -178,8 +178,8 @@
                                 href="manage-partner.php" aria-expanded="false"><i class="mdi mdi-file"></i><span
                                     class="hide-menu">Manage Partner</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="error-404.php" aria-expanded="false"><i class="mdi mdi-alert-outline"></i><span
-                                    class="hide-menu">Manage Team</span></a></li>
+                                href="perkhidmatan.php" aria-expanded="false"><i class="mdi mdi-alert-outline"></i><span
+                                    class="hide-menu">Perkhidmatan</span></a></li>
 
                     </ul>
 
@@ -208,8 +208,13 @@
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Library</li>
                                 </ol>
-                                <a href="list-contact.php" class="btn btn-success">List of Contact</a>
                             </nav>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <div class="text-right upgrade-btn">
+                            <a href="list-contact.php" class="btn btn-primary text-white"
+                               style="background-color: #4fc3f7; border: none;">Senarai Kontak</a>
                         </div>
                     </div>
                 </div>
@@ -265,7 +270,7 @@
             <div class="col-lg-8 col-xlg-9 col-md-7">
                         <div class="card">
                             <div class="card-body">
-                                <form class="form-horizontal form-material">
+                                <div class="form-horizontal form-material">
                                 <h5>Muatnaik Video Korporat</h5>
                                 <br>
             <?php 
@@ -277,7 +282,30 @@
            
             <input type='file' name='file' />
             <input type='submit' value='Upload' name='but_upload'>
+            </div>
+            </div>
+            </div>
+            </div>
             </form>
+
+            <form method="post" action="../../php/addorgchart.php" enctype='multipart/form-data'>
+           
+            <div class="col-lg-8 col-xlg-9 col-md-7">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-horizontal form-material">
+                                <h5>Muatnaik Carta Organisasi</h5>
+                                <br>
+            <?php 
+            if(isset($_SESSION['message'])){
+                echo $_SESSION['message'];
+                unset($_SESSION['message']);
+            }
+            ?>
+           
+            <input type='file' name='file'/>
+            <input type='submit' value='Upload' name='tambah'>
+            </div>
             </div>
             </div>
             </div>

@@ -3,16 +3,16 @@ include ("../conn.php");
 
 if(isset($_POST["tambah"])){
   $name = $_POST["name"];
-  $phoneno = $_POST["phoneno"];
+  $khidmat = $_POST["perkhidmatan"];
 
 
-  $sql = "INSERT INTO  `contact`
-          SET contactName = '$name', contact_no = '$phoneno'";
+  $sql = "INSERT INTO  `perkhidmatan`
+          SET khidmatName = '$name', khidmatDescription = '$khidmat'";
                                                   
   if(mysqli_query($conn, $sql)){
          echo ("<SCRIPT LANGUAGE='JavaScript'>
-         window.alert('Nombor Telefon Berjaya ditambah!')
-         window.location.href='../dashboard/admin/list-contact.php'
+         window.alert('Perkhidmatan Berjaya ditambah!')
+         window.location.href='../dashboard/admin/perkhidmatan.php'
          </SCRIPT>");
   }
    else {

@@ -1,6 +1,10 @@
 <?php
  include ("../../conn.php");
  include ("../../php/dashboard.php");
+ $id = $_GET["ID"];
+ $sql1 = "SELECT * FROM `perkhidmatan` WHERE id = $id";
+ $result = $conn->query($sql1);
+ $row = $result-> fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -15,10 +19,11 @@
     <meta name="description"
         content="Xtreme Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Xtreme Admin Lite Template by WrapPixel</title>
+    <title>Admin | Pusaka Pelangi</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/xtreme-admin-lite/" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
     <!-- Custom CSS -->
     <link href="../dist/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -58,17 +63,17 @@
                         <b class="logo-icon">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="../../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
                             <!-- Light Logo icon -->
-                            <img src="../../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                            <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="../../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                            <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
                             <!-- Light Logo text -->
-                            <img src="../../assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                            <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
                         </span>
                     </a>
                     <!-- ============================================================== -->
@@ -107,15 +112,11 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href=""
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
-                                    src="../../assets/images/users/1.jpg" alt="user" class="rounded-circle"
+                                    src="../assets/images/users/1.jpg" alt="user" class="rounded-circle"
                                     width="31"></a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated">
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i>
-                                    My Profile</a>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i>
-                                    My Balance</a>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i>
-                                    Inbox</a>
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-power-off m-r-5 m-l-5"></i>
+                                   Logout</a>
                             </div>
                         </li>
                         <!-- ============================================================== -->
@@ -141,29 +142,14 @@
                         <li>
                             <!-- User Profile-->
                             <div class="user-profile d-flex no-block dropdown m-t-20">
-                                <div class="user-pic"><img src="../../assets/images/users/1.jpg" alt="users"
+                                <div class="user-pic"><img src="../assets/images/users/1.jpg" alt="users"
                                         class="rounded-circle" width="40" /></div>
                                 <div class="user-content hide-menu m-l-10">
                                     <a href="javascript:void(0)" class="" id="Userdd" role="button"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <h5 class="m-b-0 user-name font-medium"><?php echo $admin['adName']?><i
-                                                class="fa fa-angle-down"></i></h5>
+                                        <h5 class="m-b-0 user-name font-medium"><?php echo $admin['adName']?></h5>
                                         <span class="op-5 user-email"><?php echo $admin['email']?></span>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="Userdd">
-                                        <a class="dropdown-item" href="javascript:void(0)"><i
-                                                class="ti-user m-r-5 m-l-5"></i> My Profile</a>
-                                        <a class="dropdown-item" href="javascript:void(0)"><i
-                                                class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
-                                        <a class="dropdown-item" href="javascript:void(0)"><i
-                                                class="ti-email m-r-5 m-l-5"></i> Inbox</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="javascript:void(0)"><i
-                                                class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="javascript:void(0)"><i
-                                                class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
-                                    </div>
                                 </div>
                             </div>
                             <!-- End User Profile-->
@@ -174,24 +160,20 @@
                                 href="index.php" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="pages-profile.php" aria-expanded="false"><i
+                                href="manage-access.php" aria-expanded="false"><i
                                     class="mdi mdi-account-network"></i><span class="hide-menu">Manage Access</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="table-basic.php" aria-expanded="false"><i class="mdi mdi-border-all"></i><span
+                                href="manage-company.php" aria-expanded="false"><i class="mdi mdi-border-all"></i><span
                                     class="hide-menu">Manage Company Info</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-material.php" aria-expanded="false"><i class="mdi mdi-face"></i><span
+                                href="manage-project.php" aria-expanded="false"><i class="mdi mdi-face"></i><span
                                     class="hide-menu">Manage Project</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="starter-kit.php" aria-expanded="false"><i class="mdi mdi-file"></i><span
+                                href="manage-partner.php" aria-expanded="false"><i class="mdi mdi-file"></i><span
                                     class="hide-menu">Manage Partner</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="error-404.php" aria-expanded="false"><i class="mdi mdi-alert-outline"></i><span
-                                    class="hide-menu">Manage Team</span></a></li>
-                        <li class="text-center p-40 upgrade-btn">
-                            <a href="https://wrappixel.com/templates/xtremeadmin/"
-                                class="btn btn-block btn-danger text-white" target="_blank">Upgrade to Pro</a>
-                        </li>
+                                href="perkhidmatan.php" aria-expanded="false"><i class="mdi mdi-alert-outline"></i><span
+                                    class="hide-menu">Perkhidmatam</span></a></li>
                     </ul>
 
                 </nav>
@@ -212,7 +194,7 @@
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-5">
-                        <h4 class="page-title">Starter Page</h4>
+                        <h4 class="page-title">Perkhidmatan</h4>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
@@ -220,12 +202,6 @@
                                     <li class="breadcrumb-item active" aria-current="page">Library</li>
                                 </ol>
                             </nav>
-                        </div>
-                    </div>
-                    <div class="col-7">
-                        <div class="text-right upgrade-btn">
-                            <a href="https://wrappixel.com/templates/xtremeadmin/" class="btn btn-danger text-white"
-                                target="_blank">Upgrade to Pro</a>
                         </div>
                     </div>
                 </div>
@@ -241,25 +217,38 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <div class="row">
-                    <div class="col-12">
+                    <!-- Column -->
+                    <div class="col-lg-8 col-xlg-9 col-md-7">
                         <div class="card">
                             <div class="card-body">
-                                This is some text within a card block.
+                                <form class="form-horizontal form-material" method="POST" action="../../php/editkhidmat.php" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label class="col-md-12">Nama Perkhidmatan</label>
+                                        <div class="col-md-12">
+                                            <input type="text" name="nama" value="<?php echo $row["khidmatName"] ?>"
+                                                class="form-control form-control-line" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Penerangan Perkhidmatan</label>
+                                        <div class="col-md-12">
+                                            <input type="text"  name="perkhidmatan"
+                                                class="form-control form-control-line" required>
+                                        </div>
+                                    </div>      
+                                    <input type="hidden" value="<?php echo $row["id"]?>" name="id"> 
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <input type="submit" class="btn btn-success" name="kemaskini" value="kemaskini">
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
+                    <!-- Column -->
                 </div>
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-                <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-                <!-- ============================================================== -->
-                <!-- End Right sidebar -->
-                <!-- ============================================================== -->
-            </div>
+            </div>   
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
             <!-- ============================================================== -->
@@ -284,17 +273,17 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="../../assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../../dist/js/app-style-switcher.js"></script>
+    <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../dist/js/app-style-switcher.js"></script>
     <!--Wave Effects -->
-    <script src="../../dist/js/waves.js"></script>
+    <script src="../dist/js/waves.js"></script>
     <!--Menu sidebar -->
-    <script src="../../dist/js/sidebarmenu.js"></script>
+    <script src="../dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
-    <script src="../../dist/js/custom.js"></script>
+    <script src="../dist/js/custom.js"></script>
 </body>
 
 </html>

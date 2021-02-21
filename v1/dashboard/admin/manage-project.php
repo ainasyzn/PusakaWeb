@@ -184,7 +184,7 @@
                                 href="#" aria-expanded="false"><i class="mdi mdi-face"></i><span
                                     class="hide-menu">Manage Project</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="starter-kit.php" aria-expanded="false"><i class="mdi mdi-file"></i><span
+                                href="manage-partner.php" aria-expanded="false"><i class="mdi mdi-file"></i><span
                                     class="hide-menu">Manage Partner</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="error-404.php" aria-expanded="false"><i class="mdi mdi-alert-outline"></i><span
@@ -216,7 +216,9 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Library</li>
+
                                 </ol>
+                                <a href="list-project.php" class="btn btn-success">list project</a>
                             </nav>
                         </div>
                     </div>
@@ -286,6 +288,7 @@
                 <!-- ============================================================== -->
                 <!-- End of Form -->
                 <!-- ============================================================== -->
+ 
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->

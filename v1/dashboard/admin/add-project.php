@@ -1,10 +1,8 @@
 <?php
  include ("../../php/conn.php");
- include ("../../php/tentang-syarikat.php");
  include ("../../php/dashboard.php");
  include ("../../php/getsyarikat.php");
- include ("../../php/video-upload.php");
-
+ include ("../../php/tentang-syarikat.php");
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -57,11 +55,22 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="index.php">
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo icon -->
+                        <b class="logo-icon">
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo icon -->
+                            <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                        </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
-                            <h3>ADMINISTRATION</h3>
+                            <!-- dark Logo text -->
+                            <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo text -->
+                            <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
                         </span>
                     </a>
                     <!-- ============================================================== -->
@@ -201,95 +210,75 @@
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-5">
-                        <h4 class="page-title">Maklumat Syarikat</h4>
+                        <h4 class="page-title">Tentang Projek</h4>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Library</li>
+
                                 </ol>
-                                <a href="list-contact.php" class="btn btn-success">List of Contact</a>
+                                
                             </nav>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- ============================================================== -->
-            <!-- column Form -->
-            <form action="../../php/tentang-syarikat.php" method="POST">
-            <div class="col-lg-8 col-xlg-9 col-md-7">
-                        <div class="card">
-                            <div class="card-body">
-                                <form class="form-horizontal form-material">
-                                    <div class="form-group">
-                                        <label class="col-md-12"><b>Pengenalan Syarikat</b></label>
-                                        <div class="col-md-12">
-                                            <textarea  class="form-control form-control-line" name="penSyarikat" value="<?php echo $tentang['pengenalan_desc']?>"><?php echo $tentang['pengenalan_desc']?></textarea>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="form-group">
-                                        <label  class="col-md-12"><b>Pengenalan Video</b></label>
-                                        <div class="col-md-12">
-                                            <textarea class="form-control form-control-line" name="penVideo" value="<?php echo $tentang['pengenalan_vid_desc']  ?>"><?php echo $tentang['pengenalan_vid_desc']  ?></textarea>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="form-group">
-                                        <label  class="col-md-12"><b>Keterangan Pasukan</b></label>
-                                        <div class="col-md-12">
-                                            <input type="text" class="form-control form-control-line" name="infopasukan" value="<?php echo $tentang['team_desc']  ?>">
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="form-group">
-                                        <label  class="col-md-12"><b>Alamat Syarikat</b></label>
-                                        <div class="col-md-12">
-                                            <input type="text" class="form-control form-control-line" name="alamat" value="<?php echo $tentang['alamat']?>" >
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="form-group">
-                                        <div class="col-sm-12">
-                                            <input type="submit" name="submit" value="Kemaskini" class="btn btn-success" required>
-                                            
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-            </form>
-            <form method="post" action="../../php/video-upload.php" enctype='multipart/form-data'>
-           
-            <div class="col-lg-8 col-xlg-9 col-md-7">
-                        <div class="card">
-                            <div class="card-body">
-                                <form class="form-horizontal form-material">
-                                <h5>Muatnaik Video Korporat</h5>
-                                <br>
-            <?php 
-            if(isset($_SESSION['message'])){
-                echo $_SESSION['message'];
-                unset($_SESSION['message']);
-            }
-            ?>
-           
-            <input type='file' name='file' />
-            <input type='submit' value='Upload' name='but_upload'>
-            </form>
-            </div>
-            </div>
-            </div>
-            </form>
-
+            <!-- End Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
             <!-- ============================================================== -->
             <!-- Container fluid  -->
             <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Form update start Here -->
+                <!-- ============================================================== -->
+           
+                <!-- ============================================================== -->
+                <!-- End of Form -->
+                <!-- ============================================================== -->
+ <form class="form-horizontal form-material" method="POST" action="../../php/addproject.php" enctype="multipart/form-data">
+                <div class="col-lg-8 col-xlg-9 col-md-7">
+                <div class="card">
+                    <div class="card-body">
+                        
+                            <div class="form-group">
+                                <label class="col-md-12">Nama Projek</label>
+                                <div class="col-md-12">
+                                    <input type="text" placeholder="Masukkan nama Projek" name="name"
+                                                class="form-control form-control-line" >
 
+                                    </div>
+                                </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Gambar Projek</label>
+                                        <div class="col-md-12">
+                                        Pilih Gambar untuk dimuatnaik:
+                                            <input  type="file" name="file" id="file" required>
+                                    </div>
+                                </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <input type="submit" class="btn btn-success" name="muatnaikgambar" value="muatnaikgambar">
+                                        </div>
+                                    </div>
+                               
+                            </div>
+                        </div>
+                    </div>  
+                </form>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
             <footer class="footer text-center">
-                All Rights Reserved by PusakaPelangi Sdn. Bhd.
+                All Rights Reserved by Xtreme Admin. Designed and Developed by <a
+                    href="https://www.wrappixel.com">WrapPixel</a>.
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
@@ -312,7 +301,7 @@
     <script src="../dist/js/app-style-switcher.js"></script>
     <!--Wave Effects -->
     <script src="../dist/js/waves.js"></script>
-    <!--Menu sidebar-->
+    <!--Menu sidebar -->
     <script src="../dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="../dist/js/custom.js"></script>

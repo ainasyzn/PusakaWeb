@@ -1,10 +1,10 @@
 <?php
- include ("../../php/conn.php");
- include ("../../php/tentang-syarikat.php");
+ include ("../../conn.php");
  include ("../../php/dashboard.php");
- include ("../../php/getsyarikat.php");
- include ("../../php/video-upload.php");
-
+ $id = $_GET["ID"];
+ $sql1 = "SELECT * FROM `contact` WHERE id = $id";
+ $result = $conn->query($sql1);
+ $row = $result-> fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -21,6 +21,7 @@
     <meta name="robots" content="noindex,nofollow">
     <title>Admin | Pusaka Pelangi</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/xtreme-admin-lite/" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
     <!-- Custom CSS -->
@@ -57,11 +58,22 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="index.php">
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo icon -->
+                        <b class="logo-icon">
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo icon -->
+                            <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                        </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
-                            <h3>ADMINISTRATION</h3>
+                            <!-- dark Logo text -->
+                            <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo text -->
+                            <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
                         </span>
                     </a>
                     <!-- ============================================================== -->
@@ -103,12 +115,8 @@
                                     src="../assets/images/users/1.jpg" alt="user" class="rounded-circle"
                                     width="31"></a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated">
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i>
-                                    My Profile</a>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i>
-                                    My Balance</a>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i>
-                                    Inbox</a>
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-power-off m-r-5 m-l-5"></i>
+                                   Logout</a>
                             </div>
                         </li>
                         <!-- ============================================================== -->
@@ -139,34 +147,20 @@
                                 <div class="user-content hide-menu m-l-10">
                                     <a href="javascript:void(0)" class="" id="Userdd" role="button"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <h5 class="m-b-0 user-name font-medium"><?php echo $admin['adName']?><i
-                                                class="fa fa-angle-down"></i></h5>
+                                        <h5 class="m-b-0 user-name font-medium"><?php echo $admin['adName']?></h5>
                                         <span class="op-5 user-email"><?php echo $admin['email']?></span>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="Userdd">
-                                        <a class="dropdown-item" href="javascript:void(0)"><i
-                                                class="ti-user m-r-5 m-l-5"></i> My Profile</a>
-                                        <a class="dropdown-item" href="javascript:void(0)"><i
-                                                class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
-                                        <a class="dropdown-item" href="javascript:void(0)"><i
-                                                class="ti-email m-r-5 m-l-5"></i> Inbox</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="javascript:void(0)"><i
-                                                class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="javascript:void(0)"><i
-                                                class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
-                                    </div>
                                 </div>
                             </div>
                             <!-- End User Profile-->
                         </li>
+
                         <!-- User Profile-->
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="index.php" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="manage-access.php" aria-expanded="false"><i
+                                href="pages-profile.php" aria-expanded="false"><i
                                     class="mdi mdi-account-network"></i><span class="hide-menu">Manage Access</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="manage-company.php" aria-expanded="false"><i class="mdi mdi-border-all"></i><span
@@ -175,12 +169,11 @@
                                 href="manage-project.php" aria-expanded="false"><i class="mdi mdi-face"></i><span
                                     class="hide-menu">Manage Project</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="manage-partner.php" aria-expanded="false"><i class="mdi mdi-file"></i><span
+                                href="manage-project.php" aria-expanded="false"><i class="mdi mdi-file"></i><span
                                     class="hide-menu">Manage Partner</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="error-404.php" aria-expanded="false"><i class="mdi mdi-alert-outline"></i><span
                                     class="hide-menu">Manage Team</span></a></li>
-
                     </ul>
 
                 </nav>
@@ -201,95 +194,70 @@
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-5">
-                        <h4 class="page-title">Maklumat Syarikat</h4>
+                        <h4 class="page-title">Nombor untuk Dihubungi</h4>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Library</li>
                                 </ol>
-                                <a href="list-contact.php" class="btn btn-success">List of Contact</a>
                             </nav>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- ============================================================== -->
-            <!-- column Form -->
-            <form action="../../php/tentang-syarikat.php" method="POST">
-            <div class="col-lg-8 col-xlg-9 col-md-7">
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-8 col-xlg-9 col-md-7">
                         <div class="card">
                             <div class="card-body">
-                                <form class="form-horizontal form-material">
+                                <form class="form-horizontal form-material" method="POST" action="../../php/editcontact.php" enctype="multipart/form-data">
                                     <div class="form-group">
-                                        <label class="col-md-12"><b>Pengenalan Syarikat</b></label>
+                                        <label class="col-md-12">Jenis Nombor[Whatsapp|Telefon|Faks]</label>
                                         <div class="col-md-12">
-                                            <textarea  class="form-control form-control-line" name="penSyarikat" value="<?php echo $tentang['pengenalan_desc']?>"><?php echo $tentang['pengenalan_desc']?></textarea>
+                                            <input type="text" name="nama" value="<?php echo $row["contactName"] ?>"
+                                                class="form-control form-control-line" required>
                                         </div>
                                     </div>
-                                    <br>
                                     <div class="form-group">
-                                        <label  class="col-md-12"><b>Pengenalan Video</b></label>
+                                        <label class="col-md-12">Nombor Dihubungi</label>
                                         <div class="col-md-12">
-                                            <textarea class="form-control form-control-line" name="penVideo" value="<?php echo $tentang['pengenalan_vid_desc']  ?>"><?php echo $tentang['pengenalan_vid_desc']  ?></textarea>
+                                            <input type="text"  name="phoneno"
+                                                class="form-control form-control-line" required>
                                         </div>
-                                    </div>
-                                    <br>
-                                    <div class="form-group">
-                                        <label  class="col-md-12"><b>Keterangan Pasukan</b></label>
-                                        <div class="col-md-12">
-                                            <input type="text" class="form-control form-control-line" name="infopasukan" value="<?php echo $tentang['team_desc']  ?>">
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="form-group">
-                                        <label  class="col-md-12"><b>Alamat Syarikat</b></label>
-                                        <div class="col-md-12">
-                                            <input type="text" class="form-control form-control-line" name="alamat" value="<?php echo $tentang['alamat']?>" >
-                                        </div>
-                                    </div>
-                                    <br>
+                                    </div>      
+                                    <input type="hidden" value="<?php echo $row["id"]?>" name="id"> 
                                     <div class="form-group">
                                         <div class="col-sm-12">
-                                            <input type="submit" name="submit" value="Kemaskini" class="btn btn-success" required>
-                                            
+                                            <input type="submit" class="btn btn-success" name="kemaskini" value="kemaskini">
                                         </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
-            </form>
-            <form method="post" action="../../php/video-upload.php" enctype='multipart/form-data'>
-           
-            <div class="col-lg-8 col-xlg-9 col-md-7">
-                        <div class="card">
-                            <div class="card-body">
-                                <form class="form-horizontal form-material">
-                                <h5>Muatnaik Video Korporat</h5>
-                                <br>
-            <?php 
-            if(isset($_SESSION['message'])){
-                echo $_SESSION['message'];
-                unset($_SESSION['message']);
-            }
-            ?>
-           
-            <input type='file' name='file' />
-            <input type='submit' value='Upload' name='but_upload'>
-            </form>
-            </div>
-            </div>
-            </div>
-            </form>
-
+                    <!-- Column -->
+                </div>
+            </div>   
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
             <!-- ============================================================== -->
             <!-- ============================================================== -->
-            <!-- Container fluid  -->
+            <!-- footer -->
             <!-- ============================================================== -->
-
             <footer class="footer text-center">
-                All Rights Reserved by PusakaPelangi Sdn. Bhd.
+                All Rights Reserved by Xtreme Admin. Designed and Developed by <a
+                    href="https://www.wrappixel.com">WrapPixel</a>.
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
@@ -312,7 +280,7 @@
     <script src="../dist/js/app-style-switcher.js"></script>
     <!--Wave Effects -->
     <script src="../dist/js/waves.js"></script>
-    <!--Menu sidebar-->
+    <!--Menu sidebar -->
     <script src="../dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="../dist/js/custom.js"></script>

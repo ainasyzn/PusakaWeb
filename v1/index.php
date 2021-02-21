@@ -46,6 +46,13 @@
   display: block;
   
 }
+h4{
+  font-size: 20px;
+}
+h3{
+  font-size: 33px;
+}
+
 </style>
 
   </head>
@@ -116,10 +123,29 @@
         <div class="row justify-content-md-center">
           <div class="col-md-10">
             <div class="contents text-center">
-              <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s"><img class="img-fulid" src="img/homelogo2.png" alt="" style="max-width:100%"></a></h1>
+            <center>
+            <div class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">
+            <div class="float-left" >
+            <div class="col-sm-6 col-md-6 col-xs-6" > 
+              <img src="img/logo2.png" style="height:200px">
+            </div>
+            </div>
+
+            <div class="position-relative" > 
+            <div class="col-sm-6 col-md-6 col-xs-6" > 
+           
+              <div style="text-align:justify">
+              <h3>Pusaka Pelangi Sdn Bhd</h3>
+              <h4 >(<?php echo $row["SSM"]?>)</h4>
+              <h4><?php echo $row["alamat"]?></h4>
+              <h4>Tel/Faks: <?php echo $rows["contact_no"]?></h4>
+              </div>    
               <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms"></p>
               <a href="#services" class="btn btn-common wow fadeInUp page-scroll" data-wow-duration="1000ms" data-wow-delay="400ms">Maklumat Lanjut</a>
             </div>
+            </div>
+          </div>
+          </center>
           </div>
         </div> 
       </div>           
@@ -144,7 +170,7 @@
               <div class="video-promo-content text-center">
                 <h2 class="wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms">Watch Our Intro video</h2>
                 <p class="wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms"><?php echo $row["pengenalan_vid_desc"]?></p>
-                <a href="https://www.youtube.com/watch?v=IXoMDwh4Cq8" class="video-popup wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0.3s"><i class="lnr lnr-film-play"></i></a>
+                <video src="<?php echo $row["lokasi"]?>" controls width='500px' height='320px'></video>
               </div>
           </div>
         </div>
@@ -203,89 +229,26 @@
           <p class="section-subtitle"><?php echo $row["team_desc"]?></p>
         </div>
         <div class="row">          
-          <div class="col-md-12">
-            <!-- Portfolio Controller/Buttons -->
-            <div class="controls text-center">
-              <a class="filter active btn btn-common" data-filter="all">
-                All 
-              </a>
-              <a class="filter btn btn-common" data-filter=".design">
-                Design 
-              </a>
-              <a class="filter btn btn-common" data-filter=".development">
-                Development
-              </a>
-              <a class="filter btn btn-common" data-filter=".print">
-                Print 
-              </a>
-            </div>
-            <!-- Portfolio Controller/Buttons Ends-->
-          </div>
+          
 
           <!-- Portfolio Recent Projects -->
+          <?php
+            if($results-> num_rows>0) {
+            while ($projek = $results-> fetch_assoc()) {
+              ?>
           <div id="portfolio" class="row">
             <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print">
               <div class="portfolio-item">
                 <div class="shot-item">
-                  <img src="img/portfolio/img1.jpg" alt="" />  
-                  <a class="overlay lightbox" href="img/portfolio/img1.jpg">
+                  <img src="uploads/<?php echo $projek["imej"]?>" alt=""/>  
+                  <a class="overlay lightbox" href="uploads/<?php echo $projek["imej"]?>">
                     <i class="lnr lnr-eye item-icon"></i>
                   </a>
                 </div>               
               </div>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix design print">
-              <div class="portfolio-item">
-                <div class="shot-item">
-                  <img src="img/portfolio/img2.jpg" alt="" />  
-                  <a class="overlay lightbox" href="img/portfolio/img2.jpg">
-                    <i class="lnr lnr-eye item-icon"></i>
-                  </a>
-                </div>               
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development">
-              <div class="portfolio-item">
-                <div class="shot-item">
-                  <img src="img/portfolio/img3.jpg" alt="" />  
-                  <a class="overlay lightbox" href="img/portfolio/img3.jpg">
-                    <i class="lnr lnr-eye item-icon"></i>
-                  </a>
-                </div>               
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development design">
-              <div class="portfolio-item">
-                <div class="shot-item">
-                  <img src="img/portfolio/img4.jpg" alt="" />  
-                  <a class="overlay lightbox" href="img/portfolio/img4.jpg">
-                    <i class="lnr lnr-eye item-icon"></i>
-                  </a>
-                </div>               
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development">
-              <div class="portfolio-item">
-                <div class="shot-item">
-                  <img src="img/portfolio/img5.jpg" alt="" />  
-                  <a class="overlay lightbox" href="img/portfolio/img5.jpg">
-                    <i class="lnr lnr-eye item-icon"></i>
-                  </a>
-                </div>               
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix print design">
-              <div class="portfolio-item">
-                <div class="shot-item">
-                  <img src="img/portfolio/img6.jpg" alt="" />  
-                  <a class="overlay lightbox" href="img/portfolio/img6.jpg">
-                    <i class="lnr lnr-eye item-icon"></i>
-                  </a>
-                </div>               
-              </div>
-            </div>
-            
           </div>
+          <?php } } ?>
 
         </div>
       </div>
@@ -390,26 +353,32 @@
     <!-- Team section End -->
 
     <!-- testimonial Section Start -->
-    <div id="testimonial" class="section" data-stellar-background-ratio="0.1">
-      <div class="container">
+    
+    <div id="testimonial" class="section" data-ride="carousel">
+      <div class="container" >
         <div class="row justify-content-md-center">
           <div class="col-md-12">
-              <h1 style="text-align:center">Partner Kami</h1>
-            <div class="touch-slider owl-carousel owl-theme"><?php
+              <h1 style="text-align:center">Rakan Kongsi Kami</h1>
+            <div class="touch-slider owl-carousel owl-theme" style="margin-top:70px;"><?php
               if($result2 != null){
                     if($result2-> num_rows>0) {
                     while ($row2 = $result2-> fetch_assoc()) {
               ?>
-                <div class="testimonial-item">
-                  <img src="img/testimonial/customer1.jpg" alt="Client Testimonoal" />
-                  <div class="testimonial-text">
-                    <p><?php echo $row2["partnerDesc"]?></p>
-                    <h3><?php echo $row2["partnerName"]?></h3>
-                    <span><?php echo $row2["posisi"]?></span>
+              
+              <center>
+                <div class="carousel-inner">
+                  <div class="item-active">
+                  <img src="uploads/<?php echo $row2["partnerImej"]?>" style="width:50%; height:165px; border:none;"/>
                   </div>
                 </div>
+                <div class="testimonial-text" style="display: inline;">
+                  <p><?php echo $row2["partnerName"]?>
+                
+                </div>
+                
+                </center>
               <?php }}} ?>
-            </div>
+              </div>
           </div>
         </div>        
       </div>
@@ -436,7 +405,7 @@
           </div>
           <div class="col-lg-6 col-sm-6 col-xs-12">
             <div class="copyright">
-              <p>All copyrights reserved &copy; 2020 - Designed & Developed by Syukor Studio
+              <p>All copyrights reserved &copy; 2020 - Designed & Developed by Syukor Studio</p>
             </div>
           </div>  
         </div>

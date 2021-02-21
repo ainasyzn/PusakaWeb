@@ -6,6 +6,13 @@
     $result = $conn->query($sql);
     $row = $result-> fetch_assoc();
 
+    $sqls = "SELECT * FROM `projek`";
+    $results = $conn->query($sqls);
+   
+    $query = "SELECT * FROM `contact` WHERE contactName = 'Telefon'";
+    $rsql = $conn->query($query);
+    $rows = $rsql-> fetch_assoc();
+
     //get all team desc
     $sql1 = "SELECT * FROM `member`";
     $result1 = $conn->query($sql1);

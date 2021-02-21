@@ -179,10 +179,10 @@
                                 href="pages-profile.php" aria-expanded="false"><i
                                     class="mdi mdi-account-network"></i><span class="hide-menu">Manage Access</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="table-basic.php" aria-expanded="false"><i class="mdi mdi-border-all"></i><span
+                                href="manage-company.php" aria-expanded="false"><i class="mdi mdi-border-all"></i><span
                                     class="hide-menu">Manage Company Info</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-material.php" aria-expanded="false"><i class="mdi mdi-face"></i><span
+                                href="manage-project.php" aria-expanded="false"><i class="mdi mdi-face"></i><span
                                     class="hide-menu">Manage Project</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="starter-kit.php" aria-expanded="false"><i class="mdi mdi-file"></i><span

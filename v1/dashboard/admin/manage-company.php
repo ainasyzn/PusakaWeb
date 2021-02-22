@@ -22,7 +22,7 @@
     <title>Admin | Pusaka Pelangi</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/xtreme-admin-lite/" />
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <link rel="shortcut icon" type="image/icon" href="../../img/logo2.png"/>
     <!-- Custom CSS -->
     <link href="../dist/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -57,13 +57,7 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="index.php">
-                        <!--End Logo icon -->
-                        <!-- Logo text -->
-                        <span class="logo-text">
-                            <h3>ADMINISTRATION</h3>
-                        </span>
-                    </a>
+                    <a href="index.php" class="navbar-brand" style="color:white"><img class="img-fulid" src="../../img/logo2.png" alt="" style="max-width:10%">&nbsp&nbsp&nbsp<small>Pusaka Pelangi</small></a>
                     <!-- ============================================================== -->
                     <!-- End Logo -->
                     <!-- ============================================================== -->

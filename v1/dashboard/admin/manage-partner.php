@@ -20,7 +20,7 @@
     <link rel="canonical" href="https://www.wrappixel.com/templates/xtreme-admin-lite/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <link rel="shortcut icon" type="image/icon" href="../../img/logo2.png"/>
     <!-- Custom CSS -->
     <link href="../dist/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -55,24 +55,7 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="index.html">
-                        <!-- Logo icon -->
-                        <b class="logo-icon">
-                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                            <!-- Dark Logo icon -->
-                            <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
-                            <!-- Light Logo icon -->
-                            <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
-                        </b>
-                        <!--End Logo icon -->
-                        <!-- Logo text -->
-                        <span class="logo-text">
-                            <!-- dark Logo text -->
-                            <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
-                            <!-- Light Logo text -->
-                            <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
-                        </span>
-                    </a>
+                    <a href="index.php" class="navbar-brand" style="color:white"><img class="img-fulid" src="../../img/logo2.png" alt="" style="max-width:10%">&nbsp&nbsp&nbsp<small>Pusaka Pelangi</small></a>
                     <!-- ============================================================== -->
                     <!-- End Logo -->
                     <!-- ============================================================== -->

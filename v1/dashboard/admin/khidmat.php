@@ -142,8 +142,6 @@
                         <li>
                             <!-- User Profile-->
                             <div class="user-profile d-flex no-block dropdown m-t-20">
-                                <div class="user-pic"><img src="../assets/images/users/1.jpg" alt="users"
-                                        class="rounded-circle" width="40" /></div>
                                 <div class="user-content hide-menu m-l-10">
                                     <a href="javascript:void(0)" class="" id="Userdd" role="button"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

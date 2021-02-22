@@ -19,7 +19,7 @@ if(isset($_POST['submit'])){
       if($results){
             header ("refresh:1; url=../dashboard/admin/manage-company.php");
          ?>
-         <script> alert("Tentang Syarikat Berjaya Dikemaskini")</script>
+         <script> alert("Tentang syarikat berjaya dikemaskini")</script>
          <?php
       }
    }

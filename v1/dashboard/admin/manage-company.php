@@ -82,13 +82,7 @@
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark"
-                                href="javascript:void(0)"><i class="ti-search"></i></a>
-                            <form class="app-search position-absolute">
-                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a
-                                    class="srh-btn"><i class="ti-close"></i></a>
-                            </form>
-                        </li>
+                       
                     </ul>
                     <!-- ============================================================== -->
                     <!-- Right side toggle and nav items -->
@@ -103,7 +97,7 @@
                                     src="../assets/images/users/1.jpg" alt="user" class="rounded-circle"
                                     width="31"></a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated">
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-power-off m-r-5 m-l-5"></i>
+                                <a class="dropdown-item" href="../../php/logout.php"><i class="fa fa-power-off m-r-5 m-l-5"></i>
                                    Logout</a>
                             </div>
                         </li>
@@ -146,19 +140,19 @@
                                     class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="manage-access.php" aria-expanded="false"><i
-                                    class="mdi mdi-account-network"></i><span class="hide-menu">Manage Access</span></a></li>
+                                    class="mdi mdi-account-network"></i><span class="hide-menu">Mengurus Akses</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="manage-company.php" aria-expanded="false"><i class="mdi mdi-border-all"></i><span
-                                    class="hide-menu">Manage Company Info</span></a></li>
+                                    class="hide-menu">Mengurus Maklumat Syarikat</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="manage-project.php" aria-expanded="false"><i class="mdi mdi-face"></i><span
-                                    class="hide-menu">Manage Project</span></a></li>
+                                    class="hide-menu">Mengurus Projek</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="manage-partner.php" aria-expanded="false"><i class="mdi mdi-file"></i><span
-                                    class="hide-menu">Manage Partner</span></a></li>
+                                    class="hide-menu">Mengurus Rakan Kongsi</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="perkhidmatan.php" aria-expanded="false"><i class="mdi mdi-alert-outline"></i><span
-                                    class="hide-menu">Perkhidmatan</span></a></li>
+                                    class="hide-menu">Mengurus Perkhidmatan</span></a></li>
 
                     </ul>
 

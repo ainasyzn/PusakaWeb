@@ -22,7 +22,7 @@ session_start();
         else
         {
             ?>
-            <script> alert('Invalid Username or Password');</script>
+            <script> alert('Email atau kata laluan tidak wujud!');</script>
 <?php
                 
                 header ("refresh:1; url=login.php");

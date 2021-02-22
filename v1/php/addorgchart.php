@@ -36,10 +36,10 @@ if(isset($_POST["tambah"])){
           }
   }
   else {
-          echo ("<SCRIPT LANGUAGE='JavaScript'>
-          window.alert('Format fail tidak dibenarkan! Sila cuba sekali lagi')
-          window.location.href='../dashboard/admin/manage-comopany.php'
-                </SCRIPT>");
+        header ("refresh:1; url=../dashboard/admin/manage-company.php")
+        ?>
+        <script>alert("Format fail tidak dibenarkan. Format yang dibenarkan: .jpg, .jpeg, .png")</script>
+        <?php
   }
 }
 ?>

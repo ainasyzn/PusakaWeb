@@ -21,7 +21,7 @@ if(isset($_POST['but_upload'])){
           if(($_FILES['file']['size'] >= $maxsize) || ($_FILES["file"]["size"] == 0)) {
             header ("refresh:1; url=../dashboard/admin/manage-company.php")
             ?>
-            <script>alert('File too large. File must be less than 5MB.');</script>
+            <script>alert('Fail tidak boleh melebihi 5MB');</script>
             <?php
             
           }else{
@@ -35,7 +35,7 @@ if(isset($_POST['but_upload'])){
                
                header ("refresh:1; url=../dashboard/admin/manage-company.php")
                ?>
-               <script>alert('Muat Naik Berjaya');</script>
+               <script>alert('Muatnaik berjaya');</script>
                <?php
              }
           }
@@ -43,7 +43,7 @@ if(isset($_POST['but_upload'])){
        }else{
          header ("refresh:1; url=../dashboard/admin/manage-company.php")
             ?>
-            <script>alert('Invalid File Extension');</script>
+            <script>alert('Format fail tidak dibenarkan. Format yang dibenarkan: .mp4, .avi, .3gp, .mov, .mpeg');</script>
             <?php
        }
    }else{

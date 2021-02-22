@@ -28,7 +28,7 @@ if(isset($_POST["tambah"])){
                                                   
                           if(mysqli_query($conn, $sql)){
                               echo ("<SCRIPT LANGUAGE='JavaScript'>
-                              window.alert('Partner successfully updated!')
+                              window.alert('Rakan Kongsi berjaya ditambah!')
                               window.location.href='../dashboard/admin/manage-partner.php'
                                     </SCRIPT>");
                               } else {
@@ -38,10 +38,10 @@ if(isset($_POST["tambah"])){
           }
   }
   else {
-          echo ("<SCRIPT LANGUAGE='JavaScript'>
-          window.alert('Can't upload file of this type! Please try again.')
-          window.location.href='../dashboard/admin/manage-partner.php'
-                </SCRIPT>");
+        header ("refresh:1; url=../dashboard/admin/manage-partner.php")
+          ?>
+          <script>alert("Format fail tidak dibenarkan. Format yang dibenarkan: .jpg, .jpeg, .png")</script>
+          <?php
   }
 }
 ?>

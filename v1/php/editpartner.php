@@ -30,7 +30,7 @@ if(isset($_POST["kemaskini"])){
                                                   
                           if(mysqli_query($conn, $sql)){
                               echo ("<SCRIPT LANGUAGE='JavaScript'>
-                              window.alert('Partner successfully updated!')
+                              window.alert('Rakan Kongsi berjaya dikemaskini!')
                               window.location.href='../dashboard/admin/manage-partner.php'
                                     </SCRIPT>");
                               } else {

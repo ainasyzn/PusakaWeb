@@ -13,7 +13,7 @@ if(isset($_POST["kemaskini"])){
         if($result1){
         header("Location: ../dashboard/admin/perkhidmatan.php");
         ?>
-        <script>alert("Perkhidmatan Berjaya Dikemaskini")</script>
+        <script>alert("Perkhidmatan berjaya Dikemaskini")</script>
         <?php
         }
 }

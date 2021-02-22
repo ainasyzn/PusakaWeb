@@ -11,7 +11,7 @@ if(isset($_POST["tambah"])){
                                                   
   if(mysqli_query($conn, $sql)){
          echo ("<SCRIPT LANGUAGE='JavaScript'>
-         window.alert('Perkhidmatan Berjaya ditambah!')
+         window.alert('Perkhidmatan berjaya ditambah!')
          window.location.href='../dashboard/admin/perkhidmatan.php'
          </SCRIPT>");
   }

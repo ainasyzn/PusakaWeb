@@ -18,7 +18,7 @@ if(isset($_POST['submit'])){
       if($results){
             header ("refresh:1; url=../dashboard/admin/manage-project.php");
          ?>
-         <script> alert("Tentang Projek Berjaya Dikemaskini")</script>
+         <script> alert("Tentang projek berjaya dikemaskini")</script>
          <?php
       }
    }

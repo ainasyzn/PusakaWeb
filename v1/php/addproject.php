@@ -27,7 +27,7 @@ if(isset($_POST["muatnaikgambar"])){
  
                            if(mysqli_query($conn, $sql)){
                                echo ("<SCRIPT LANGUAGE='JavaScript'>
-                               window.alert('Kemaskini Projek Berjaya!')
+                               window.alert('Projek berjaya dikemaskini!')
                                window.location.href='../dashboard/admin/list-project.php'
                                      </SCRIPT>");
                                } else {
@@ -37,9 +37,9 @@ if(isset($_POST["muatnaikgambar"])){
            }
    }
    else {
-           echo ("<SCRIPT LANGUAGE='JavaScript'>
-           window.alert('Gagal Memuatnaik. Sila cuba sekali lagi!')
-           window.location.href='../dashboard/admin/list-project.php'
-                 </SCRIPT>");
+        header ("refresh:1; url=../dashboard/admin/list-project.php")
+        ?>
+        <script>alert("Format fail tidak dibenarkan. Format yang dibenarkan: .jpg, .jpeg, .png")</script>
+        <?php
    }
  }

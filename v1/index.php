@@ -127,7 +127,7 @@ h3{
             <div class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">
             <div class="float-left" >
             <div class="col-sm-6 col-md-6 col-xs-6" > 
-              <img src="img/logo2.png" style="height:200px">
+              <img src="img/logo2.png" style="height:250px; width:120px">
             </div>
             </div>
 
@@ -319,7 +319,7 @@ h3{
     <!-- Team section Start -->
     <section id="team" class="section">
       <div class="container">
-      <div class="row justify-content-md-center">
+      <div class="row justify-content-center">
         <div class="section-header">          
           <h2 class="section-title">Carta Organisasi</h2>
           <hr class="lines">

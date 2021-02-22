@@ -128,22 +128,19 @@
 
                         <!-- User Profile-->
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="index.php" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                                    class="hide-menu">Dashboard</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="manage-access.php" aria-expanded="false"><i
+                                href="index.php" aria-expanded="false"><i
                                     class="mdi mdi-account-network"></i><span class="hide-menu">Mengurus Akses</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="manage-company.php" aria-expanded="false"><i class="mdi mdi-border-all"></i><span
+                                href="manage-company.php" aria-expanded="false"><i class="fas fa-building"></i><span
                                     class="hide-menu">Mengurus Maklumat Syarikat</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="manage-project.php" aria-expanded="false"><i class="mdi mdi-face"></i><span
+                                href="manage-project.php" aria-expanded="false"><i class="mdi mdi-briefcase"></i><span
                                     class="hide-menu">Mengurus Projek</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="manage-partner.php" aria-expanded="false"><i class="mdi mdi-file"></i><span
+                                href="manage-partner.php" aria-expanded="false"><i class="far fa-handshake"></i><span
                                     class="hide-menu">Mengurus Rakan Kongsi</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="perkhidmatan.php" aria-expanded="false"><i class="mdi mdi-alert-outline"></i><span
+                                href="perkhidmatan.php" aria-expanded="false"><i class="mdi mdi-settings"></i><span
                                     class="hide-menu">Mengurus Perkhidmatan</span></a></li>
                     </ul>
 

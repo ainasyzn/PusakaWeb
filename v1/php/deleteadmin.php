@@ -5,6 +5,6 @@ include ("../conn.php");
     $sql = "DELETE FROM admin WHERE id = $id";
     $result = $conn->query($sql);
 
-    header("Location: ../dashboard/admin/manage-access.php");
+    header("Location: ../dashboard/admin/index.php");
     
 ?>

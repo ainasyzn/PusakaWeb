@@ -12,7 +12,7 @@ if(isset($_POST["tambah"])){
   if(mysqli_query($conn, $sql)){
          echo ("<SCRIPT LANGUAGE='JavaScript'>
          window.alert('Admin berjaya didaftar!')
-         window.location.href='../dashboard/admin/manage-access.php'
+         window.location.href='../dashboard/admin/index.php'
          </SCRIPT>");
   }
    else {

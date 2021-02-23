@@ -1,11 +1,10 @@
 <?php
    session_start();
-   $email = $_SESSION['email'];
-
+   $id = $_SESSION['id'];
    //get all admin info
    $sql = "SELECT * 
            FROM `admin`
-           WHERE email = '$email'";
+           WHERE id = '$id'";
    $result = $conn->query($sql);
    $admin = $result-> fetch_assoc();
 

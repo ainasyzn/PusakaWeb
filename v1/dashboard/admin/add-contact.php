@@ -191,7 +191,7 @@
                             <div class="card-body">
                                 <form class="form-horizontal form-material" method="POST" action="../../php/addcontact.php" enctype="multipart/form-data">
                                     <div class="form-group">
-                                        <label class="col-md-12">Jenis Nombor[Whatsapp|Telefon|Faks]</label>
+                                        <label class="col-md-12">Jenis Nombor: [Contoh: Whatsapp/Telegram]</label>
                                         <div class="col-md-12">
                                             <input type="text" placeholder="Masukkan Jenis Nombor" name="name"
                                                 class="form-control form-control-line" required>
@@ -223,8 +223,7 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center">
-                All Rights Reserved by Xtreme Admin. Designed and Developed by <a
-                    href="https://www.wrappixel.com">WrapPixel</a>.
+            All Rights Reserved by PusakaPelangi Sdn. Bhd.
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->

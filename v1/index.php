@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/main.css">    
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/footer.css">
 
     <style>
 .dropdown {
@@ -87,7 +88,7 @@ h3{
               </li>
 
               <li class="nav-item">
-                <a class="nav-link page-scroll" href="#team">Team Kami</a>
+                <a class="nav-link page-scroll" href="#team">Carta Organisasi</a>
               </li>
 
 
@@ -168,7 +169,7 @@ h3{
         <div class="row justify-content-center">
           <div class="col-lg-8">
               <div class="video-promo-content text-center">
-                <h2 class="wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms">Watch Our Intro video</h2>
+                <h2 class="wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms">VIDEO PENGENALAN</h2>
                 <p class="wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms"><?php echo $row["pengenalan_vid_desc"]?></p>
                 <video src="<?php echo $row["lokasi"]?>" controls width='500px' height='320px'></video>
               </div>
@@ -226,7 +227,7 @@ h3{
         <div class="section-header">          
           <h2 class="section-title">Projek Kami</h2>
           <hr class="lines">
-          <p class="section-subtitle"><?php echo $row["team_desc"]?></p>
+          <p class="section-subtitle"><?php echo $row["projek_desc"]?></p>
         </div>
         <div id="portfolio" class="row">          
           <!-- Portfolio Recent Projects -->
@@ -338,7 +339,10 @@ h3{
       <div class="container" >
         <div class="row justify-content-md-center">
           <div class="col-md-12">
-              <h1 style="text-align:center">Rakan Kongsi Kami</h1>
+            <div class="section-header">          
+              <h2 class="section-title" style="color: white;">Rakan Kongsi Kami</h2>
+              <hr class="lines">
+            </div>
             <div class="touch-slider owl-carousel owl-theme" style="margin-top:70px;"><?php
               if($result2 != null){
                     if($result2-> num_rows>0) {
@@ -364,6 +368,7 @@ h3{
         </div>        
       </div>
     </div>
+
     <!-- testimonial Section Start -->
 
     <!-- Blog Section -->
@@ -375,23 +380,23 @@ h3{
     <!-- Contact Section End -->
 
     <!-- Footer Section Start -->
-    <footer>          
-      <div class="container">
-        <div class="row">
-          <!-- Footer Links -->
-          <div class="col-lg-6 col-sm-6 col-xs-12">
-            <ul class="footer-links">
-
-            </ul>
-          </div>
-          <div class="col-lg-6 col-sm-6 col-xs-12">
-            <div class="copyright">
-              <p>All copyrights reserved &copy; 2020 - Designed & Developed by Syukor Studio</p>
+    <div class="footer">
+      <div class="section-header">          
+              <h2 class="section-title" style="color: white;">Hubungi Kami</h2>
+              <hr class="lines">
             </div>
-          </div>  
-        </div>
-      </div>
-    </footer>
+      <div class="container">
+
+      
+      <?php
+            if($result4 != null){
+                    if($result4-> num_rows>0) {
+                    while ($row4 = $result4-> fetch_assoc()) { ?>
+            <p><i class="fa fa-phone" aria-hidden="true"></i> &nbsp <u style="font-size: 18px;"><?php echo $row4["contact_no"]?></u> &nbsp <font style="color: grey">(<?php echo $row4["contactName"]?>)</font></p>
+            <?php }
+              } }?>
+      </div> 
+    </div>
     <!-- Footer Section End --> 
 
     <!-- Go To Top Link -->

@@ -16,6 +16,7 @@ session_start();
         if($count == 1)
         {
             $_SESSION['email'] = $email;
+            $_SESSION['id'] = $row["id"];
             //echo '<h3>connection successfull!</h3>';
             header("location:../dashboard/admin/index.php");
         }

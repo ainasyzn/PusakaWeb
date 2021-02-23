@@ -12,6 +12,9 @@ if(isset($_POST["kemaskini"])){
         $result1 = $conn->query($sql1);
         if($result1){
         header("Location: ../dashboard/admin/list-contact.php");
+        ?>
+            <script>alert("Kemaskini kontak berjaya!");</script>
+        <?php
         }
 }
 ?>

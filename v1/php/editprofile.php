@@ -1,7 +1,7 @@
 <?php
 include ("../conn.php");
 session_start();
-$session = $_SESSION['email'];
+$session = $_SESSION['id'];
 
 if(isset($_POST["Kemaskini"])){
   $name = $_POST["name"];
@@ -9,13 +9,14 @@ if(isset($_POST["Kemaskini"])){
   $oPass = $_POST["oPass"];
   $nPass = $_POST["nPass"];
 
-  $search = "SELECT * FROM `admin` WHERE email= $session AND adPassword = $oPass";
-  $admin = $conn->query($search);
+  $search = "SELECT * FROM `admin` WHERE id = '$session' AND adPassword = '$oPass' ";
+  $result = $conn->query($search);
+  $admin = mysqli_fetch_assoc($result);
 
         if($admin)
         {
                 $sql = "UPDATE  `admin`
-                SET adName = '$name', email = '$email', adPassword = '$nPass'";
+                SET adName = '$name', email = '$email', adPassword = '$nPass' WHERE id= '$session'";
                                                         
                 if(mysqli_query($conn, $sql)){
                 echo ("<SCRIPT LANGUAGE='JavaScript'>
@@ -29,7 +30,7 @@ if(isset($_POST["Kemaskini"])){
         }
         else if(empty($oPass) && empty($nPass)){
                 $sql = "UPDATE  `admin`
-                SET adName = '$name', email = '$email' WHERE email = $session";
+                SET adName = '$name', email = '$email' WHERE id = '$session' ";
                                                         
                 if(mysqli_query($conn, $sql)){
                 echo ("<SCRIPT LANGUAGE='JavaScript'>
@@ -55,7 +56,7 @@ if(isset($_POST["Kemaskini"])){
         }         
         else {
                 echo ("<SCRIPT LANGUAGE='JavaScript'>
-                window.alert('Katalaluan tidak benar! Sila cuba sekali lagi')
+                window.alert('Katalaluan tidak benar! Sila cuba sekali lagi.')
                 window.location.href='../dashboard/admin/index.php'
                 </SCRIPT>");
         }

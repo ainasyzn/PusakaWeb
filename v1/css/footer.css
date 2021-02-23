@@ -1,0 +1,12 @@
+.footer{
+    max-height: 100%;
+    background-color: #252D31;
+    color: #313131;
+    padding: 60px;
+}
+
+.footer .container{
+    max-height: 100%;
+    background-color: #FFF;
+    width: 800px;
+    padding: 40px;

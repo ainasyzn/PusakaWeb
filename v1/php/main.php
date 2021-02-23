@@ -24,4 +24,8 @@
     //get all perkhidmatan
     $sql3 = "SELECT * FROM  `perkhidmatan`";
     $result3 = $conn->query($sql3);
+
+    //get contacts
+    $sql4 = "SELECT * FROM `contact`";
+    $result4 = $conn->query($sql4);
 ?>

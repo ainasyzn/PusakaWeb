@@ -4,7 +4,7 @@
    
    $user_check = $_SESSION['adminuser'];
    
-   $ses_sql = mysqli_query($conn,"select adName from admin where adName = '$user_check' ");
+   $ses_sql = mysqli_query($conn,"select adName, id from admin where adName = '$user_check' ");
    
    $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
    

@@ -155,7 +155,7 @@
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-5">
-                        <h4 class="page-title">Mengurus Admin</h4>
+                        <h4 class="page-title">kemaskini Akaun</h4>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
@@ -167,8 +167,8 @@
                     </div>
                     <div class="col-7">
                         <div class="text-right upgrade-btn">
-                            <a href="add-admin.php" class="btn btn-primary text-white"
-                             style="background-color: #4fc3f7; border: none;"><i class="fa fa-plus-square"></i> Tambah Admin</a>
+                            <a href="manage-access.php" class="btn btn-primary text-white"
+                             style="background-color: #4fc3f7; border: none;"><i class="fa fa-plus-square"></i>Lihat Senarai Admin</a>
                         </div>
                     </div>
                 </div>
@@ -185,43 +185,52 @@
                 <!-- ============================================================== -->
                 <!-- Row -->
                 <div class="row">
-                    <div class="col-12">
+                    <!-- Column -->
+                    <div class="col-lg-8 col-xlg-9 col-md-7">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Senarai Admin</h4>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Nama admin</th>
-                                            <th scope="col">E-mel</th>
-                                            <th scope="col">Tindakan</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php
-                                    if($result-> num_rows>0) {
-                                    $i = 1;
-                                    while ($row = $result-> fetch_assoc()) {?>
-                                        <tr>
-                                            <th scope="row"><?php echo $i ?></th>
-                                            <td><?php echo $row["adName"]?></td>
-                                            <td><?php echo $row["email"] ?></td>
-                                            <td style="text-align: center;">
-                                            <a href="../../php/deleteadmin.php?ID=<?php echo  $row["id"] ?>"><i onclick="return confirm('Hapus admin ini?')" aria-hidden="true" class="fas fa-trash-alt"></i></a>&nbsp&nbsp&nbsp                               
-                                        </tr>
-                                    <?php $i++;
-                                        }                                    
-                                    } ?>
-                                    </tbody>
-                                </table>
+                                <form class="form-horizontal form-material" method="POST" action="../../php/editprofile.php">
+                                    <div class="form-group">
+                                        <label class="col-md-12">Nama admin</label>
+                                        <div class="col-md-12">
+                                            <input type="text" name="name"
+                                                class="form-control form-control-line" value="<?php echo $admin["adName"]?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">E-mel</label>
+                                        <div class="col-md-12">
+                                            <input type="email" name="email"
+                                                class="form-control form-control-line" value="<?php echo $admin["email"]?>">
+                                        </div>
+                                    </div>  
+                                    <div class="form-group">
+                                        <label class="col-md-12">Old Password</label>
+                                        <div class="col-md-12">
+                                            <input type="password" name="oPass"
+                                                class="form-control form-control-line">
+                                        </div>
+                                    </div>  
+                                    <div class="form-group">
+                                        <label class="col-md-12">New Password</label>
+                                        <div class="col-md-12">
+                                            <input type="password" name="nPass"
+                                                class="form-control form-control-line">
+                                        </div>
+                                    </div> 
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <input type="submit" class="btn btn-success" name="Kemaskini" value="Kemaskini">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
-
-                </div> <!-- row end -->
+                    <!-- Column -->
+                </div>
                 <!-- Row -->
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->

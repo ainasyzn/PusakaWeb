@@ -386,7 +386,16 @@ h3{
               <hr class="lines">
             </div>
       <div class="container">
-
+        <div class="mapouter"><div class="gmap_canvas">
+          <iframe width="600" height="500" id="gmap_canvas" 
+            src="https://maps.google.com/maps?q=No%204,%20Pusat%20Perdagangan%20Jelapang%202%20&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+            frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+          </iframe>
+          <a href="https://123movies-to.org"></a>
+          <br>
+          <a href="https://www.embedgooglemap.net">how to add google maps to website</a>
+        </div>
+      </div>               
       
       <?php
             if($result4 != null){

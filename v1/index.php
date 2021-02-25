@@ -26,36 +26,9 @@
     <link rel="stylesheet" href="css/main.css">    
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/footer.css">
-
-    <style>
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #000000;
-  min-width: 280px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-  
-}
-h4{
-  font-size: 20px;
-}
-h3{
-  font-size: 33px;
-}
-
-</style>
-
+    <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
 
@@ -66,7 +39,7 @@ h3{
         <div class="container">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
-            <a href="http://www.pusakapelangi.net" class="navbar-brand" style="color:white"><img class="img-fulid" src="img/logo2.png" alt="" style="max-width:15%"><small>Pusaka Pelangi</small></a>
+            <a href="" class="navbar-brand" style="color:white"><img class="img-fulid" src="img/logo2.png" alt="" style="max-width:10%"><small>Pusaka Pelangi</small></a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
               <i class="lnr lnr-menu"></i>
@@ -112,7 +85,7 @@ h3{
             </li>
 
             <li>
-              <a class="page-scroll" href="#team">Team Kami</a>
+              <a class="page-scroll" href="#team">Carta Organisasi</a>
             </li>
 
         </ul>
@@ -128,15 +101,15 @@ h3{
             <div class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">
             <div class="float-left" >
             <div class="col-sm-6 col-md-6 col-xs-6" > 
-              <img src="img/logo2.png" style="height:250px; width:120px">
+              <img src="img/logo2.png" style="height:250px; width:140px">
             </div>
             </div>
 
             <div class="position-relative" > 
             <div class="col-sm-6 col-md-6 col-xs-6" > 
            
-              <div style="text-align:justify">
-              <h3>Pusaka Pelangi Sdn Bhd</h3>
+              <div style="text-align:justify" class="responsive">
+              <h3>Pusaka Pelangi Sdn. Bhd.</h3>
               <h4 >(<?php echo $row["SSM"]?>)</h4>
               <h4><?php echo $row["alamat"]?></h4>
               <h4>Tel/Faks: <?php echo $rows["contact_no"]?></h4>
@@ -171,7 +144,7 @@ h3{
               <div class="video-promo-content text-center">
                 <h2 class="wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms">VIDEO PENGENALAN</h2>
                 <p class="wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms"><?php echo $row["pengenalan_vid_desc"]?></p>
-                <video src="<?php echo $row["lokasi"]?>" controls width='500px' height='320px'></video>
+                <video class="responsive" src="<?php echo $row["lokasi"]?>" controls width='700px' height='520px'></video>
               </div>
           </div>
         </div>
@@ -198,9 +171,9 @@ h3{
             ?>
                  <div class="col-lg-6 col-sm-6 col-xs-12 box-item">
                     <span class="icon">
-                      <i class="lnr lnr-rocket"></i>
+                    <i class="fa fa-tasks" style="font-size: 18px;"></i>
                     </span>
-                    <div class="text">
+                    <div class="text" style="margin: 0px 20px;">
                       <h4><?php echo $row3["khidmatName"]?></h4>
                       <?php echo nl2br($row3["khidmatDescription"])?>
                     </div>
@@ -245,7 +218,7 @@ h3{
                   <a class="overlay lightbox" href="uploads/<?php echo $projek["imej"]?>">
                     <i class="lnr lnr-eye item-icon"></i>
                   </a>
-                  <p><?php echo $projek["projekName"]?></p>
+                  <p style="color: grey; text-align: center; margin: 20px 0px;"><?php echo $projek["projekName"]?></p>
                 </div>               
               </div>
             </div>
@@ -326,7 +299,7 @@ h3{
           <hr class="lines">
         </div>
         <div class="row" >
-        <img src="uploads/<?php echo $row["imej_org"]?>" >
+        <img src="uploads/<?php echo $row["imej_org"]?>" class="responsive">
         </div>
         </div>
       </div>
@@ -341,7 +314,7 @@ h3{
           <div class="col-md-12">
             <div class="section-header">          
               <h2 class="section-title" style="color: white;">Rakan Kongsi Kami</h2>
-              <hr class="lines">
+              <hr class="lines" >
             </div>
             <div class="touch-slider owl-carousel owl-theme" style="margin-top:70px;"><?php
               if($result2 != null){
@@ -384,27 +357,40 @@ h3{
       <div class="section-header">          
               <h2 class="section-title" style="color: white;">Hubungi Kami</h2>
               <hr class="lines">
-            </div>
-      <div class="container">
-        <div class="mapouter"><div class="gmap_canvas">
-          <iframe width="600" height="500" id="gmap_canvas" 
-            src="https://maps.google.com/maps?q=No%204,%20Pusat%20Perdagangan%20Jelapang%202%20&t=&z=13&ie=UTF8&iwloc=&output=embed" 
-            frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-          </iframe>
-          <a href="https://123movies-to.org"></a>
-          <br>
-          <a href="https://www.embedgooglemap.net">how to add google maps to website</a>
-        </div>
-      </div>               
+      </div>
       
-      <?php
-            if($result4 != null){
-                    if($result4-> num_rows>0) {
-                    while ($row4 = $result4-> fetch_assoc()) { ?>
-            <p><i class="fa fa-phone" aria-hidden="true"></i> &nbsp <u style="font-size: 18px;"><?php echo $row4["contact_no"]?></u> &nbsp <font style="color: grey">(<?php echo $row4["contactName"]?>)</font></p>
-            <?php }
-              } }?>
+      <div class="container" style="margin-bottom: 60px;">
+      <div id="portfolio" class="row"> 
+        
+      <div class="mapouter">
+        <div class="gmap_canvas">
+            <div class="map-responsive">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.798373077986!2d101.05831011460191!3d4.630030543555871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31caeb5a7ed8bb45%3A0x9b0ac61a35b8a2c0!2sPusaka%20Pelangi%20Sdn%20Bhd!5e0!3m2!1sen!2smy!4v1614150127177!5m2!1sen!2smy" width="100%" height="100%" style="border:0;" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+            </div>
+            
+            
+        <div class="portfolio-item">
+        
+          <div class="contact">
+          <p style="font-size: 16px;">Nombor untuk dihubungi</p>
+          <?php
+                if($result4 != null){
+                        if($result4-> num_rows>0) {
+                        while ($row4 = $result4-> fetch_assoc()) { ?>
+                <p ><u style="font-size: 18px;"><?php echo $row4["contact_no"]?></u> <br> <font style="color: grey">(<?php echo $row4["contactName"]?>)</font></p>
+                <?php }
+                  } }
+          ?>
+           
+          </div>
+        </div>
       </div> 
+      </div>
+      <div class="copyright">
+        <p>&copy; Pusaka Pelangi Sdn. Bhd. Hak cipta terpelihara</p>
+      </div>
     </div>
     <!-- Footer Section End --> 
 

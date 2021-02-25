@@ -9,7 +9,7 @@
     $sqls = "SELECT * FROM `projek`";
     $results = $conn->query($sqls);
    
-    $query = "SELECT * FROM `contact` WHERE contactName = 'Telefon'";
+    $query = "SELECT * FROM `contact` WHERE contactName = 'Pejabat'";
     $rsql = $conn->query($query);
     $rows = $rsql-> fetch_assoc();
 
